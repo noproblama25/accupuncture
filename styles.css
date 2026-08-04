@@ -1,0 +1,126 @@
+/* ============================================================
+   Acupunctuur & Chi Kung — Ruimteverhuur
+   Design system: calm / organic, deep teal-green + warm cream
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --green:        #185e56;   /* deep teal — from the engraved logo */
+  --green-600:    #1c6b62;
+  --green-700:    #0f4a43;
+  --green-800:    #0a352f;
+  --green-300:    #6fa39b;
+  --green-100:    #d3e2dd;
+  --green-50:     #e9f0ec;
+
+  /* Type-2 earth accent (warm clay) — set by Tweaks */
+  --clay:         #b27447;
+  --clay-50:      #f2e7dc;
+
+  /* Today marker — distinct from both session-type colors */
+  --today:        #3a6ea5;
+  --today-50:     #e6eef6;
+
+  /* Neutrals — warm paper */
+  --cream:        #f3eee2;   /* app background */
+  --paper:        #fbf9f3;   /* card surface */
+  --paper-2:      #f7f3ea;
+  --ink:          #1c2422;   /* near-black green */
+  --ink-2:        #43504b;
+  --muted:        #76817b;
+  --line:         #e4ddcd;
+  --line-2:       #efe9da;
+
+  --shadow-sm: 0 1px 2px rgba(20,40,35,.05), 0 1px 3px rgba(20,40,35,.06);
+  --shadow-md: 0 4px 16px -6px rgba(15,50,42,.18), 0 2px 6px -3px rgba(15,50,42,.12);
+  --shadow-lg: 0 24px 60px -22px rgba(10,42,36,.34), 0 8px 24px -14px rgba(10,42,36,.2);
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 26px;
+
+  --font-display: "Spectral", Georgia, serif;
+  --font-ui: "Mulish", system-ui, -apple-system, sans-serif;
+
+  --maxw: 1180px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+button { font-family: inherit; cursor: pointer; }
+input, select, textarea { font-family: inherit; }
+::selection { background: var(--green-100); }
+
+h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 600; margin: 0; letter-spacing: -.01em; }
+
+/* scrollbars */
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: #cdd6cf; border-radius: 20px; border: 3px solid transparent; background-clip: padding-box; }
+*::-webkit-scrollbar-thumb:hover { background: #b3c0b8; background-clip: padding-box; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid transparent; border-radius: 999px;
+  padding: 11px 20px; font-size: 14.5px; font-weight: 700; letter-spacing: .005em;
+  transition: transform .12s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease, color .15s ease;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--green); color: #f4f1e7; box-shadow: 0 1px 0 rgba(0,0,0,.06), inset 0 1px 0 rgba(255,255,255,.08); }
+.btn-primary:hover { background: var(--green-700); box-shadow: var(--shadow-md); }
+.btn-ghost { background: transparent; color: var(--green-700); border-color: var(--line); }
+.btn-ghost:hover { background: var(--green-50); border-color: var(--green-100); }
+.btn-soft { background: var(--green-50); color: var(--green-700); }
+.btn-soft:hover { background: var(--green-100); }
+.btn-sm { padding: 8px 14px; font-size: 13px; }
+.btn-lg { padding: 14px 26px; font-size: 16px; }
+.btn[disabled] { opacity: .45; pointer-events: none; }
+
+/* ---------- form fields ---------- */
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field > label { font-size: 12.5px; font-weight: 700; color: var(--ink-2); letter-spacing: .02em; }
+.input, .select {
+  appearance: none; width: 100%;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 12px 14px; font-size: 15px; color: var(--ink);
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s;
+}
+.input::placeholder { color: #aab2ac; }
+.input:focus, .select:focus { outline: none; border-color: var(--green-300); box-shadow: 0 0 0 4px rgba(24,94,86,.1); background: #fff; }
+.select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2376817b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat; background-position: right 13px center; padding-right: 38px;
+}
+
+/* ---------- cards ---------- */
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); }
+
+/* ---------- pills / badges ---------- */
+.badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; letter-spacing: .01em; }
+.badge-green { background: var(--green-50); color: var(--green-700); }
+.badge-clay { background: var(--clay-50); color: var(--clay); }
+.badge-outline { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+
+/* ---------- utility ---------- */
+.muted { color: var(--muted); }
+.eyebrow { font-size: 11.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--green-300); }
+.hr { height: 1px; background: var(--line); border: 0; }
+.mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+
+/* fade-in */
+@keyframes riseIn { from { transform: translateY(12px); } to { transform: none; } }
+@keyframes fadeIn { from { opacity: .35; } to { opacity: 1; } }
+.rise { animation: riseIn .5s cubic-bezier(.2,.7,.2,1) both; }
+@media (prefers-reduced-motion: reduce) { .rise { animation: none; } }
